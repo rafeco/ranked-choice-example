@@ -8,4 +8,3 @@ DELETE FROM ranked_choices;
 
 .mode csv
 .import ballots.csv ranked_choices
-SELECT COUNT(*) FROM ranked_choices
