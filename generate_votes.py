@@ -7,7 +7,7 @@ candidates = ["Eric Adams", "Maya Wiley", "Kathryn Garcia", "Andrew Yang", "Scot
         "Art Chang", "Paperboy Prince", "Joycelyn Taylor", "Isaac Wright"]
 
 def make_ballot():
-    return random.sample(candidates, k=5)
+    return random.sample(candidates, k=random.randint(1, 5))
 
 def format_ballot(ballot):
     records = []
@@ -16,7 +16,7 @@ def format_ballot(ballot):
     return records
 
 def main():
-    for n in range(0, 1000):
+    for n in range(0, 10000):
         ballot = make_ballot()
 
         records = format_ballot(ballot)
