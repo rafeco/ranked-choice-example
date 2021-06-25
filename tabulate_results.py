@@ -120,10 +120,6 @@ def execute_round(remaining_candidates, round_number):
         remaining_candidates = remove_last_place_candidate(remaining_candidates)
         execute_round(remaining_candidates, round_number)
 
-def db_test():
-    for row in dbc.execute('SELECT COUNT(*) FROM ranked_choices'):
-        print(row)
-
 def main():
     execute_round(list(generate_votes.candidates), 1)
 
