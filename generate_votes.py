@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import random
+import sys
 
 candidates = ["Eric Adams", "Maya Wiley", "Kathryn Garcia", "Andrew Yang", "Scott Stringer", 
         "Dianne Morales", "Raymond McGuire", "Shaun Donovan", "Aaron Fondenauer", 
@@ -16,7 +17,15 @@ def format_ballot(ballot):
     return records
 
 def main():
-    for n in range(0, 10000):
+    votes = 10000
+
+    if len(sys.argv) > 1:
+        try:
+            votes = int(sys.argv[1])
+        except ValueError:
+            print("Invalid vote count")
+
+    for n in range(0, votes):
         ballot = make_ballot()
 
         records = format_ballot(ballot)

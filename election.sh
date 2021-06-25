@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-/usr/bin/env python3 generate_votes.py > ballots.csv
+/usr/bin/env python3 generate_votes.py $1 > ballots.csv
 
 sqlite3 ranked_choices.db < import.sql
 
